@@ -1,15 +1,16 @@
 #!/bin/bash
-#NOTE: Converts the originally acquired DICOM data into fMRI BIDS format for further processing
+# NOTE 1: Converts the originally acquired DICOM data into fMRI BIDS format for further processing
+# NOTE 2: Checks if the BIDS files (Pain and Resting state) have the intended original number of volumes converted from raw DICOM files
 # NOTE: Requires dcm2bids to be installed on the system; see dcm2bids_config.json for the configuration file generated from acquisition parameters
 # NOTE: Requires FSL to be installed on the system; see https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation for installation instructions
 
-######### run this preprocessing script from the main server directory #########
+######### run this script from the main server directory #########
 
 # DATADIR=/path/to/the/server/fMRI/data/directory
 DATADIR=$PWD
 N = 53 #last subject's ID in the dataset
 
-for Subj in {1..53}
+for Subj in $(seq -f "%02g" 1 53)  # looping through all subjects with zero-padding to keep uniform characterization in the subject-IDs in the BIDS directories
 do
 
     # Subj=53 #in case of a single subject run
