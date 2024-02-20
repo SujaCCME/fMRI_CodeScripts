@@ -1,8 +1,8 @@
 #!/bin/bash
 # NOTE 1: Converts the originally acquired DICOM data into fMRI BIDS format for further processing
 # NOTE 2: Checks if the BIDS files (Pain and Resting state) have the intended original number of volumes converted from raw DICOM files
-# NOTE: Requires dcm2bids to be installed on the system; see dcm2bids_config.json for the configuration file generated from acquisition parameters
-# NOTE: Requires FSL to be installed on the system; see https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation for installation instructions
+# NOTE 3: Requires dcm2bids to be installed on the system; see dcm2bids_config.json for the configuration file generated from acquisition parameters
+# NOTE 4: Requires FSL to be installed on the system; see https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation for installation instructions
 
 ######### run this script from the main server directory #########
 
