@@ -1,0 +1,78 @@
+{
+    "descriptions": [
+        {
+            "datatype": "anat",
+            "suffix": "T1w",
+            "criteria": {
+                "SeriesDescription": "T1w_MPR",
+	            "ProtocolName": "T1w_MPR"
+            }
+        },
+        {
+            "datatype": "anat",
+            "suffix": "T2w",
+            "criteria": {
+                "SeriesDescription": "T2w_SPC",
+	            "ProtocolName": "T2w_SPC"
+            }
+        },
+        {   
+            "id": "id_task-mem",
+            "datatype": "func",
+            "suffix": "bold",
+            "custom_entities": "task-mem",
+            "criteria": {
+                "SeriesDescription": "Mem*",
+                "ProtocolName": "Mem*",
+                "ScanningSequence": "EP",
+                "SequenceName": "epfid2d1_104"
+            },
+            "sidecar_changes": {
+                "TaskName": "mem"
+            }       
+        },
+        {
+            "id": "id_task-rest",
+            "datatype": "func",
+            "suffix": "bold",
+            "custom_entities": "task-rest",
+            "criteria": {
+                "SeriesDescription": "rsfMRI-6min*",
+                "ProtocolName": "rsfMRI-6min*",
+                "ScanningSequence": "EP",
+                "SequenceName": "epfid2d1_104"
+            },
+            "sidecar_changes": {
+                "TaskName": "rest"
+            }    
+        },
+        {
+            "datatype": "fmap",
+            "suffix": "epi",
+            "dir_label":"AP",
+            "IntendedFor": ["id_task-mem", "id_task-rest"],
+            "criteria": {
+                "SeriesDescription": "SpinEchoFieldMap_AP*",
+                "ProtocolName": "SpinEchoFieldMap_AP*",
+                "ScanningSequence": "EP",
+                "SequenceName": "epse2d1_104",
+                "PhaseEncodingDirection": "j-",
+                "TotalReadoutTime": 0.0597409
+            }
+        },
+        {
+            "datatype": "fmap",
+            "suffix": "epi",
+            "dir_label":"PA",
+            "IntendedFor": ["id_task-mem", "id_task-rest"],
+            "criteria": {
+                "SeriesDescription": "SpinEchoFieldMap_PA*",
+                "ProtocolName": "SpinEchoFieldMap_PA*",
+                "ScanningSequence": "EP",
+                "SequenceName": "epse2d1_104",
+                "PhaseEncodingDirection": "j",
+                "TotalReadoutTime": 0.0597409
+            }
+        }
+    ]
+}

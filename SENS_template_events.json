@@ -1,0 +1,14 @@
+{
+    "onset": {
+        "Description": "Stimulus onset time starts 24 seconds after the start of the trial"
+    },
+    "duration": {
+        "Description": "Stimulus duration lasts for 10 seconds"
+    },
+    "trial_type": {
+        "Description": "Description for trial_type",
+        "Levels": {
+                "Pain": "A pain stimulus based on subject's tolerance level is presented to the subject to their left index finger five times during the Pain run."
+        }
+    }
+}
